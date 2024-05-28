@@ -5,11 +5,13 @@ import Code from "./Code";
 const ConditionalComponent = () => {
   const display = true;
 
-  if (display) {
-    return <Welcome />;
-  } else {
-    return <Code />;
-  }
+  return display ? <Welcome /> : <Code />; //Ternary Condition
+
+  //   if (display) {
+  //     return <Welcome />;
+  //   } else {
+  //     return <Code />;
+  //   }
 
   //   if (display) {
   //     return <h1>This is a conditional Component</h1>;
