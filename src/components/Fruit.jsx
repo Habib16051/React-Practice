@@ -4,9 +4,14 @@ const Fruit = ({ name, price }) => {
   return (
     <div>
       <ul>
-        <li>
-          {name} {price}
-        </li>
+        {/* {name} {price} */}
+        {price >= 200 ? (
+          <li>
+            {name} {price}
+          </li>
+        ) : (
+          " "
+        )}
       </ul>
     </div>
   );
