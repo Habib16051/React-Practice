@@ -6,14 +6,27 @@ const Fruits = () => {
     {
       name: "Apple",
       price: 200,
+      soldOut: true,
     },
     {
       name: "Mango",
       price: 100,
+      soldOut: true,
     },
     {
-      name: "Grapes",
-      price: 300,
+      name: "Banana",
+      price: 150,
+      soldOut: false,
+    },
+    {
+      name: "Orange",
+      price: 250,
+      soldOut: true,
+    },
+    {
+      name: "Watermelon",
+      price: 500,
+      soldOut: false,
     },
   ];
   return (
@@ -24,7 +37,12 @@ const Fruits = () => {
           //     {" "}
           //     {fruit.name}, ${fruit.price}
           //   </li>
-          <Fruit key={index} name={fruit.name} price={fruit.price} /> // Rendering component inside  a loop
+          <Fruit
+            key={index}
+            name={fruit.name}
+            price={fruit.price}
+            soldOut={fruit.soldOut}
+          /> // Rendering component inside  a loop
         ))}
       </ul>
     </>

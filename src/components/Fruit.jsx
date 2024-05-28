@@ -1,17 +1,12 @@
 import React from "react";
 
-const Fruit = ({ name, price }) => {
+const Fruit = ({ name, price, soldOut }) => {
   return (
     <div>
       <ul>
-        {/* {name} {price} */}
-        {price >= 200 ? (
-          <li>
-            {name} {price}
-          </li>
-        ) : (
-          " "
-        )}
+        <li>
+          {name} {price} {soldOut ? "soldout" : " "}
+        </li>
       </ul>
     </div>
   );
