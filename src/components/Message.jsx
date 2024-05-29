@@ -13,6 +13,7 @@ const Message = () => {
         Click here (-)
       </button>
       <br />
+      <br />
       <p>Counter: {counter}</p>
       <br />
 

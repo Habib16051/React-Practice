@@ -6,6 +6,7 @@ import Fruits from "./components/Fruits";
 import ConditionalComponent from "./components/ConditionalComponent";
 import Message from "./components/Message";
 import Form from "./components/Form";
+import Search from "./components/Search";
 
 const person = {
   name: "Habib",
@@ -27,6 +28,8 @@ function App() {
       <br />
       <br />
       <Form />
+      <br />
+      <Search />
     </>
   );
 }
