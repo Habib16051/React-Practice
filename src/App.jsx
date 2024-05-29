@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Fruits from "./components/Fruits";
 import ConditionalComponent from "./components/ConditionalComponent";
+import Message from "./components/Message";
 
 const person = {
   name: "Habib",
@@ -20,6 +21,8 @@ function App() {
       <Fruits />
       <br />
       <ConditionalComponent />
+      <br />
+      <Message />
     </>
   );
 }
