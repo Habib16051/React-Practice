@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Fruits from "./components/Fruits";
 import ConditionalComponent from "./components/ConditionalComponent";
 import Message from "./components/Message";
+import Form from "./components/Form";
 
 const person = {
   name: "Habib",
@@ -23,6 +24,9 @@ function App() {
       <ConditionalComponent />
       <br />
       <Message />
+      <br />
+      <br />
+      <Form />
     </>
   );
 }
