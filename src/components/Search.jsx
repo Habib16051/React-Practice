@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 // const URL = "https://api.spoonacular.com/recipes/complexSearch";
 const URL = "https://jsonplaceholder.typicode.com/posts";
 // const API_KEY = "231dcda2a81041c199fdeb156e003174";
@@ -8,18 +9,27 @@ const Search = () => {
   const [data, setData] = useState([]);
   const [showData, setShowData] = useState(false);
 
+  const fetchData = async () => {
+    const { data } = await axios.get(`${URL}?query=${5}`);
+    setData(data);
+  };
+
   useEffect(() => {
-    async function fetchFood() {
-      await fetch(`${URL}?query=${query}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-        });
-    }
-    if (showData) {
-      fetchFood();
-    }
+    fetchData();
   }, [query, showData]);
+
+  //   useEffect(() => {
+  //     async function fetchFood() {
+  //       await fetch(`${URL}?query=${query}`)
+  //         .then((res) => res.json())
+  //         .then((data) => {
+  //           setData(data);
+  //         });
+  //     }
+  //     if (showData) {
+  //       fetchFood();
+  //     }
+  //   }, [query, showData]);
   return (
     <div className="container mx-auto px-4">
       <input
@@ -31,9 +41,19 @@ const Search = () => {
       />
       <br />
       <br />
-      <button onClick={() => setShowData(!showData)} className="mb-4">
+      {/* <button onClick={() => setShowData(!showData)} className="mb-4">
         {showData ? "Hide Data" : "Show Data"}
+      </button> */}
+
+      <button
+        onClick={async () => {
+          await fetchData();
+        }}
+      >
+        Show Data
       </button>
+      <button onClick={() => setData([])}>Hide Data</button>
+
       {showData && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {data?.map((item, id) => (
