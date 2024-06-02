@@ -8,6 +8,9 @@ import Message from "./components/Message";
 import Form from "./components/Form";
 import Search from "./components/Search";
 import Search_2 from "./components/Search_2";
+import UserProfile from "./components/UserProfile";
+import UserProfile2 from "./components/UserProfile2";
+// import UserProfile2 from "./components/ContextApi/UserProfile2";
 
 const person = {
   name: "Habib",
@@ -23,6 +26,9 @@ function App() {
       <br />
       <Fruits />
       <br />
+      <UserProfile />
+      <br />
+      <UserProfile2 />
       <ConditionalComponent />
       <br />
       <Message />
