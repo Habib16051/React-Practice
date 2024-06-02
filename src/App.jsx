@@ -14,6 +14,7 @@ import UserProfile2 from "./components/UserProfile2";
 import Home from "./components/ReactRouter/Home";
 import About from "./components/ReactRouter/About";
 import Contact from "./components/ReactRouter/Contact";
+import NotFound from "./components/ReactRouter/NotFound";
 
 const person = {
   name: "Habib",
@@ -39,6 +40,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
 
