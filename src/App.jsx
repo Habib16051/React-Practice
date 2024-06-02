@@ -15,6 +15,7 @@ import Home from "./components/ReactRouter/Home";
 import About from "./components/ReactRouter/About";
 import Contact from "./components/ReactRouter/Contact";
 import NotFound from "./components/ReactRouter/NotFound";
+import NavBar from "./components/ReactRouter/NavBar";
 
 const person = {
   name: "Habib",
@@ -36,10 +37,11 @@ function App() {
       <br />
 
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
