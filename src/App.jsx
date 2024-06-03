@@ -1,21 +1,16 @@
 import { useState } from "react";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Fruits from "./components/Fruits";
 import ConditionalComponent from "./components/ConditionalComponent";
 import Message from "./components/Message";
 import Form from "./components/Form";
-import Search from "./components/Search";
+// import Search from "./components/Search";
 import Search_2 from "./components/Search_2";
-import UserProfile from "./components/UserProfile";
-import UserProfile2 from "./components/UserProfile2";
-// import UserProfile2 from "./components/ContextApi/UserProfile2";
 import Home from "./components/ReactRouter/Home";
-import About from "./components/ReactRouter/About";
-import Contact from "./components/ReactRouter/Contact";
-import NotFound from "./components/ReactRouter/NotFound";
-import NavBar from "./components/ReactRouter/NavBar";
+import Product from "./components/ReactRouter/Product";
+import ProductList from "./components/ReactRouter/ProductList";
 
 const person = {
   name: "Habib",
@@ -31,31 +26,30 @@ function App() {
       <br />
       <Fruits />
       <br />
-      <UserProfile />
       <br />
-      <UserProfile2 />
-      <br />
-
-      <BrowserRouter>
-        <NavBar />
+      <Router>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/products">Products</Link>
+            </li>
+          </ul>
+        </nav>
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<ProductList />} />
+          {/* Dynamic routing  */}
+          <Route path="/product/:productId" element={<Product />} />
         </Routes>
-      </BrowserRouter>
-
+      </Router>
       <ConditionalComponent />
       <br />
       <Message />
       <br />
-
-      <br />
-      <br />
       <Form />
-      <br />
-      {/* <Search /> */}
       <br />
       <Search_2 />
     </>
