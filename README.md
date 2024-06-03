@@ -9,3 +9,5 @@ Currently, two official plugins are available:
 
 - Importance React Topic List:
 - reace memo => prevent unnecessary re-rendering of any child component
+
+- useCallback => The useCallback hook in React is used to memoize callback functions, which can help optimize performance by preventing unnecessary re-creations of these functions on every render. This is particularly useful when passing callbacks to child components that might otherwise trigger unnecessary re-renders.
