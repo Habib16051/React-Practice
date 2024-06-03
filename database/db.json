@@ -1,0 +1,10 @@
+{
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 },
+    { "id": "3", "title": "yet another title", "views": 300 },
+    { "id": "4", "title": "Agnibina", "views": 400 },
+    { "id": "5", "title": "Rikter Bedon", "views": 500 },
+    { "id": "6", "title": "Badhonhara", "views": 600 }
+  ]
+}

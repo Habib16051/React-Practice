@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -11,6 +11,7 @@ import Search_2 from "./components/Search_2";
 import Home from "./components/ReactRouter/Home";
 import Product from "./components/ReactRouter/Product";
 import ProductList from "./components/ReactRouter/ProductList";
+import axios from "axios";
 
 const person = {
   name: "Habib",
@@ -20,12 +21,31 @@ const person = {
 };
 
 function App() {
+  const [users, setUsers] = useState([]);
+
+  const getAllUsers = async () => {
+    const response = await axios.get("http://localhost:3001/posts");
+    setUsers(response.data);
+  };
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
   return (
     <>
       <Navbar person={person} />
       <br />
       <Fruits />
       <br />
+      {/* JSON Server and fetch data using axios */}
+      <nav>
+        <ul>
+          {users.map((user) => (
+            <li key={user.id}>{user.title}</li>
+          ))}
+        </ul>
+      </nav>
+
       <br />
       <Router>
         <nav>
