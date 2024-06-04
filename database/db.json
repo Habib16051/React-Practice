@@ -1,10 +1,35 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 },
-    { "id": "3", "title": "yet another title", "views": 300 },
-    { "id": "4", "title": "Agnibina", "views": 400 },
-    { "id": "5", "title": "Rikter Bedon", "views": 500 },
-    { "id": "6", "title": "Badhonhara", "views": 600 }
+    { "id": "1", "Movie": "Batman Begins", "title": "a title", "views": 100 },
+    {
+      "id": "2",
+      "Movie": "The Dark Knight",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "3",
+      "Movie": "The Dark Knight Rises",
+      "title": "yet another title",
+      "views": 300
+    },
+    {
+      "id": "4",
+      "Movie": "Batman V Superman",
+      "title": "Agnibina",
+      "views": 400
+    },
+    {
+      "id": "5",
+      "Movie": "Man of Steel",
+      "title": "Rikter Bedon",
+      "views": 500
+    },
+    {
+      "id": "6",
+      "Movie": "Justice League",
+      "title": "Badhonhara",
+      "views": 600
+    }
   ]
 }
