@@ -10,4 +10,4 @@ Currently, two official plugins are available:
 - Importance React Topic List:
 - reace memo => prevent unnecessary re-rendering of any child component
 
-- useCallback => The useCallback prevent the unecessary re-rendering of the child component again and again.
+- useCallback => The useCallback prevent the unecessary re-rendering of the child component again and again. and Save the times and complexity. and makes the system smooth
