@@ -1,22 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-const products = [
-  { id: 1, name: "Product 1" },
-  { id: 2, name: "Product 2" },
-  { id: 3, name: "Product 3" },
-  { id: 4, name: "Product 4" },
-  { id: 5, name: "Product 5" },
-  { id: 6, name: "Product 6" },
-];
 const ProductList = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/posts");
+        if (response.data) {
+          setProducts(response.data);
+        } else {
+          console.error("No products found");
+        }
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div>
-      <h1>Products</h1>
+      <h2>Products</h2>
       <ul>
         {products.map((product) => (
           <li key={product.id}>
-            <Link to={`/product/${product.id}`}>{product.name}</Link>
+            <Link to={`/product/${product.id}`}>{product.title}</Link>
           </li>
         ))}
       </ul>
